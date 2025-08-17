@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jashwanth KL — Portfolio</title>
+  <meta name="description" content="Portfolio of Jashwanth KL — B.E (CSE) 2025. Skills: Git, Jenkins, Maven, Ansible, Docker, Python, SQL, Power BI, Tableau, AWS (EC2, S3, IAM, RDS, ELB, VPC, etc.). Project: CI/CD to Tomcat on AWS with Terraform & Jenkins." />
+
+  <!-- Open Graph & Twitter (preview when shared) -->
+  <meta property="og:title" content="Jashwanth KL — Portfolio" />
+  <meta property="og:description" content="DevOps/Cloud-focused CSE graduate (2025) with hands-on CI/CD on AWS, Terraform, Jenkins, Docker and data viz tools." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.example" />
+  <meta property="og:image" content="https://your-domain.example/og-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Canonical (adjust when you deploy to your domain) -->
+  <link rel="canonical" href="https://your-domain.example" />
+
+  <!-- JSON-LD: Person schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jashwanth KL",
+    "email": "mailto:jashwanthkl1113@gmail.com",
+    "telephone": "+91 7975532351",
+    "url": "https://your-domain.example",
+    "sameAs": [
+      "https://www.linkedin.com/in/jashwanth-kl-43439a2b7"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "SRI KRISHNA INSTITUTE OF TECHNOLOGY (VTU)"
+    },
+    "knowsAbout": [
+      "Git","Jenkins","Maven","Ansible","Docker",
+      "Python","SQL","Power BI","Tableau",
+      "AWS EC2","AWS S3","AWS IAM","AWS RDS","AWS ELB","AWS VPC","AWS EBS","AWS CLI","Cross Region Replication"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Computer Science Student / DevOps & Cloud Enthusiast"
+    }
+  }
+  </script>
+
+  <!-- Fonts & icons (optional CDN) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --card: #11151b;
+      --text: #e8eef6;
+      --muted: #9fb0c0;
+      --brand: #4f8cff;
+      --accent: #22c55e;
+      --chip: #1a2028;
+      --ring: #2a3140;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#0a0c10 0%, #0d1117 60%, #0c1118 100%);
+    }
+    a{color:var(--brand);text-decoration:none}
+    a:focus-visible, button:focus-visible{outline:2px solid var(--brand); outline-offset:3px}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    header[role="banner"]{
+      position:sticky; top:0; z-index:10;
+      background:rgba(10,12,16,.6); backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid var(--ring);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+    }
+    .nav a.logo{
+      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px;
+      color:var(--text);
+    }
+    .logo .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+    .nav .links{display:flex; gap:20px; flex-wrap:wrap}
+    .nav .links a{color:var(--muted)}
+    .nav .actions{display:flex; gap:10px}
+    .btn{
+      padding:10px 14px; border:1px solid var(--ring); border-radius:12px;
+      background:linear-gradient(180deg,#121823, #0f141c); color:var(--text);
+      box-shadow:var(--shadow); cursor:pointer;
+    }
+    .btn.primary{border-color:transparent;background:linear-gradient(180deg,#5ea1ff,#4f8cff)}
+    .btn.ghost{background:#0d1219}
+    .btn.small{padding:8px 10px;border-radius:10px;font-size:14px}
+
+    main[role="main"]{display:grid; gap:24px; padding-top:20px}
+    section{border:1px solid var(--ring); background:radial-gradient(1200px 600px at 20% -20%, #142033, transparent 60%), var(--card); border-radius:var(--radius); padding:22px}
+    h1,h2{margin:0 0 10px}
+    h1{font-size: clamp(28px, 3vw, 44px);}
+    h2{font-size: clamp(20px, 2.1vw, 26px);}
+    p{color:var(--muted); line-height:1.6}
+
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; align-items:center;
+    }
+    .hero .card{padding:22px;border-radius:var(--radius); background:linear-gradient(180deg,#10161f,#0f141c); border:1px solid var(--ring)}
+    .kpis{display:grid; grid-template-columns: repeat(3,1fr); gap:10px}
+    .kpi{padding:14px;border-radius:12px;background:var(--chip); text-align:center}
+    .kpi .num{font-weight:800;font-size:22px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{background:var(--chip); border:1px solid var(--ring); padding:8px 10px; border-radius:999px; font-size:14px; color:var(--text)}
+    .list{display:grid; gap:12px; margin:0; padding:0; list-style:none}
+    .list li{display:flex; gap:10px}
+    .list li .bullet{width:8px; height:8px; border-radius:50%; background:var(--accent); margin-top:.6em}
+    .grid-2{display:grid; grid-template-columns: repeat(2,1fr); gap:16px}
+    .grid-3{display:grid; grid-template-columns: repeat(3,1fr); gap:12px}
+    .edu-table{width:100%; border-collapse:collapse; overflow:auto}
+    .edu-table th,.edu-table td{border-bottom:1px solid var(--ring); padding:10px; text-align:left}
+    .footer{display:flex; flex-wrap:wrap; align-items:center; gap:12px; justify-content:space-between}
+    .contact{display:grid; gap:10px}
+    .contact .row{display:flex; gap:10px; flex-wrap:wrap}
+    .muted{color:var(--muted)}
+    .tag{font-size:12px; padding:6px 8px; border-radius:10px; background:#0d1219; border:1px dashed var(--ring)}
+    .skip-link{position:absolute;left:-9999px; top:auto; width:1px;height:1px; overflow:hidden}
+    .skip-link:focus{position:static;width:auto;height:auto;padding:8px 10px; background:var(--brand); color:#09101a; border-radius:8px}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr}
+      .kpis{grid-template-columns: repeat(3,1fr)}
+      .grid-3{grid-template-columns: repeat(2,1fr)}
+    }
+    @media (max-width: 520px){
+      .kpis{grid-template-columns: 1fr 1fr}
+      .grid-3{grid-template-columns: 1fr}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to main content</a>
+
+  <!-- Header / Landmark -->
+  <header role="banner" aria-label="Site header">
+    <div class="wrap nav">
+      <a class="logo" href="#top" aria-label="Home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Jashwanth KL</span>
+      </a>
+      <nav class="links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#project">Project</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="actions" role="group" aria-label="Actions">
+        <button class="btn small ghost" id="themeToggle" aria-pressed="false">🌙 Theme</button>
+        <a class="btn small" href="resume.pdf" download>⬇️ Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="content" role="main" class="wrap" aria-label="Main content">
+    <!-- Hero -->
+    <section id="about" class="hero" aria-labelledby="about-title">
+      <div class="card">
+        <h1 id="about-title">Computer Science (CSE) — 2025</h1>
+        <p>
+          I’m <strong>Jashwanth KL</strong>, a DevOps/Cloud enthusiast with hands-on experience across
+          CI/CD, Infrastructure as Code, and AWS services. I enjoy building reliable pipelines and
+          deploying scalable apps, and I’m comfortable with data visualization tools as well.
+        </p>
+        <div class="kpis" aria-label="At-a-glance">
+          <div class="kpi" aria-label="Graduation year"><div class="num">2025</div><div class="muted">B.E (CSE)</div></div>
+          <div class="kpi" aria-label="Primary focus"><div class="num">DevOps</div><div class="muted">Cloud & CI/CD</div></div>
+          <div class="kpi" aria-label="Location"><div class="num">Bengaluru</div><div class="muted">India</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Quick Links</h2>
+        <div class="contact">
+          <div class="row">
+            <a class="btn" href="mailto:jashwanthkl1113@gmail.com">📧 Email</a>
+            <a class="btn" href="tel:+917975532351">📞 Call</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://linkedin.com/in/jashwanth-kl-43439a2b7">in LinkedIn</a>
+          </div>
+          <p class="muted">Bengaluru • +91 7975532351 • jashwanthkl1113@gmail.com</p>
+          <span class="tag">Open to Opportunities</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="grid-2">
+        <div>
+          <h3>DevOps & Tools</h3>
+          <div class="chips" role="list">
+            <span class="chip" role="listitem">Git</span>
+            <span class="chip" role="listitem">Jenkins</span>
+            <span class="chip" role="listitem">Maven</span>
+            <span class="chip" role="listitem">Ansible</span>
+            <span class="chip" role="listitem">Docker</span>
+          </div>
+          <h3 style="margin-top:14px">Programming & Data</h3>
+          <div class="chips" role="list">
+            <span class="chip" role="listitem">Python</span>
+            <span class="chip" role="listitem">SQL</span>
+            <span class="chip" role="listitem">Power BI</span>
+            <span class="chip" role="listitem">Tableau</span>
+          </div>
+        </div>
+        <div>
+          <h3>AWS Services</h3>
+          <div class="chips" role="list">
+            <span class="chip" role="listitem">EC2</span>
+            <span class="chip" role="listitem">S3</span>
+            <span class="chip" role="listitem">IAM</span>
+            <span class="chip" role="listitem">CLI</span>
+            <span class="chip" role="listitem">RDS</span>
+            <span class="chip" role="listitem">ELB</span>
+            <span class="chip" role="listitem">EBS</span>
+            <span class="chip" role="listitem">VPC</span>
+            <span class="chip" role="listitem">Cross Region Replication</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project -->
+    <section id="project" aria-labelledby="project-title">
+      <h2 id="project-title">Featured Project — CI/CD to Tomcat on AWS</h2>
+      <p>
+        Deployed a Java web application to Tomcat using a Jenkins pipeline and Terraform-provisioned infrastructure on AWS; artifacts were versioned in S3. Stack included Git/GitHub, Maven, Jenkins (master/agent), Apache Tomcat, Terraform, and AWS.
+      </p>
+      <ul class="list" aria-label="Responsibilities">
+        <li><span class="bullet"></span><span>Provisioned AWS infrastructure with Terraform via Jenkins pipeline.</span></li>
+        <li><span class="bullet"></span><span>Configured Jenkins master/agent for build & deploy stages.</span></li>
+        <li><span class="bullet"></span><span>Set up Tomcat on the agent and integrated Jenkins + Maven to build a WAR.</span></li>
+        <li><span class="bullet"></span><span>Uploaded artifacts to S3 with versioning and used freestyle deployment jobs.</span></li>
+      </ul>
+      <div class="chips" style="margin-top:10px" role="list" aria-label="Tech used">
+        <span class="chip" role="listitem">Git</span>
+        <span class="chip" role="listitem">Maven</span>
+        <span class="chip" role="listitem">Jenkins</span>
+        <span class="chip" role="listitem">Tomcat</span>
+        <span class="chip" role="listitem">Terraform</span>
+        <span class="chip" role="listitem">AWS</span>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" aria-labelledby="edu-title">
+      <h2 id="edu-title">Education</h2>
+      <div role="region" aria-label="Education table" tabindex="0">
+        <table class="edu-table">
+          <thead>
+            <tr>
+              <th>Institution</th>
+              <th>Course</th>
+              <th>Board/University</th>
+              <th>Year</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sri Krishna Institute of Technology</td>
+              <td>B.E (CSE)</td>
+              <td>VTU</td>
+              <td>2025</td>
+              <td>7.7 CGPA</td>
+            </tr>
+            <tr>
+              <td>PVP Polytechnic</td>
+              <td>Diploma (IST)</td>
+              <td>DTE Board</td>
+              <td>2022</td>
+              <td>82%</td>
+            </tr>
+            <tr>
+              <td>SS Public High School</td>
+              <td>SSLC</td>
+              <td>State Board</td>
+              <td>2019</td>
+              <td>80%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Extras -->
+    <section aria-labelledby="extras-title">
+      <h2 id="extras-title">Strengths, Languages & Hobbies</h2>
+      <div class="grid-3">
+        <div>
+          <h3>Strengths</h3>
+          <ul class="list">
+            <li><span class="bullet"></span><span>Team Player</span></li>
+            <li><span class="bullet"></span><span>Adaptable & Flexible</span></li>
+            <li><span class="bullet"></span><span>Strong Analytical Skills</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <ul class="list">
+            <li><span class="bullet"></span><span>English (S • W • R)</span></li>
+            <li><span class="bullet"></span><span>Kannada (S • W • R)</span></li>
+            <li><span class="bullet"></span><span>Hindi (W • R)</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Hobbies</h3>
+          <ul class="list">
+            <li><span class="bullet"></span><span>Exploring New Technologies</span></li>
+            <li><span class="bullet"></span><span>Singing</span></li>
+            <li><span class="bullet"></span><span>Cricket</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="muted">Prefer email? Click the button below to start a message with a pre-filled subject.</p>
+      <div class="row">
+        <a class="btn primary" id="emailBtn" href="#">Email Me</a>
+        <button class="btn ghost" id="copyEmail">Copy Email</button>
+      </div>
+      <p class="muted" style="margin-top:10px">
+        Address (optional to display): #24, 15th Cross, Vigneshwara Nagar, Sunkadakatte, Bangalore — 560091
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" aria-label="Site footer">
+    <div class="wrap footer">
+      <small class="muted">© <span id="year"></span> Jashwanth KL</small>
+      <div class="muted">Made with HTML • CSS • JS</div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth anchor scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+          history.pushState(null, '', '#'+id);
+        }
+      });
+    });
+
+    // Theme toggle (light/dark)
+    const themeBtn = document.getElementById('themeToggle');
+    const stored = localStorage.getItem('theme');
+    if(stored === 'light'){ document.documentElement.classList.add('light'); }
+    themeBtn?.addEventListener('click', ()=>{
+      const html = document.documentElement;
+      const isLight = html.classList.toggle('light');
+      themeBtn.setAttribute('aria-pressed', String(isLight));
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
+    // Light theme tokens override
+    const style = document.createElement('style');
+    style.textContent = `
+      .light body{ background: #f6f8fb; color:#0d1117; }
+      .light section{ background:#fff; border-color:#e5e7eb; }
+      .light .btn{ background:#f3f4f6; color:#0d1117; border-color:#e5e7eb }
+      .light .btn.primary{ background: linear-gradient(180deg,#5ea1ff,#4f8cff); color:white }
+      .light .chip{ background:#f3f4f6; border-color:#e5e7eb; color:#0d1117 }
+      .light .muted{ color:#475569 }
+      .light header[role="banner"]{ background:rgba(255,255,255,.8) }
+    `;
+    document.head.appendChild(style);
+
+    // Pre-filled email link
+    const emailBtn = document.getElementById('emailBtn');
+    emailBtn?.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const subject = encodeURIComponent('Inquiry from your portfolio site');
+      const body = encodeURIComponent('Hi Jashwanth,\n\nI came across your portfolio and would like to connect.\n\nThanks,\n');
+      window.location.href = `mailto:jashwanthkl1113@gmail.com?subject=${subject}&body=${body}`;
+    });
+
+    // Copy email to clipboard
+    const copyBtn = document.getElementById('copyEmail');
+    copyBtn?.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText('jashwanthkl1113@gmail.com');
+        copyBtn.textContent = 'Copied!';
+        setTimeout(()=> copyBtn.textContent = 'Copy Email', 1200);
+      }catch(err){
+        alert('Could not copy. Please copy manually: jashwanthkl1113@gmail.com');
+      }
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
